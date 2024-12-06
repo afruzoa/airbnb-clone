@@ -88,7 +88,7 @@ body {
 }
 
 .home:hover {
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
   border-radius: 22px;
 }
 
@@ -102,7 +102,7 @@ body {
 
 .language:hover {
   border-radius: 22px;
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
 }
 
 .right-header {
@@ -274,7 +274,6 @@ input:focus {
 .who {
   font-size: 14px;
   font-weight: 700;
-  ;
 }
 
 .search-item {
@@ -299,17 +298,17 @@ input:focus {
 }
 
 .search-item input:hover {
-  background-color: #DDDDDD;
+  background-color: #dddddd;
 }
 
 .search-item:hover,
 .guests-box:hover {
-  background-color: #DDDDDD;
+  background-color: #dddddd;
   cursor: pointer;
 }
 
 .bg-grey {
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
 }
 
 .search-bt {
@@ -319,7 +318,7 @@ input:focus {
 .search-button {
   width: 48px;
   height: 48px;
-  background-color: #FF5A5F;
+  background-color: #ff5a5f;
   border-radius: 50px;
   display: flex;
   justify-content: center;
@@ -339,7 +338,7 @@ input:focus {
   position: absolute;
   right: 0;
   z-index: 1;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 32px;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
   margin-top: 12px;
@@ -535,22 +534,21 @@ input:focus {
 } */
 
 .checkin-header {
-  border: 2px solid #EBEBEB;
+  border: 2px solid #ebebeb;
   justify-content: space-around;
   align-items: center;
-width: 303px;
-  background-color: #EBEBEB;
+  width: 303px;
+  background-color: #ebebeb;
   padding: 0 4px;
   margin: 0 auto;
   border-radius: 30px;
   display: flex;
-
 }
 
 .checkin-date,
 .checkin-month,
 .checkin-flex {
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
   padding: 8px 12px;
   margin: 4px 2px 4px 0;
   font-size: 14px;
@@ -563,41 +561,40 @@ width: 303px;
 }
 .checkin-date:hover,
 .checkin-month:hover,
-.checkin-flex:hover{
-  background-color: #DDDDDD;
+.checkin-flex:hover {
+  background-color: #dddddd;
 }
 
-#daterange td{
+#daterange td {
   width: 48px;
   height: 48px;
   border-radius: 50% !important;
 }
-#daterange td:hover{
- border: 1px solid black;
- border-radius: 50% !important;
- 
+#daterange td:hover {
+  border: 1px solid black;
+  border-radius: 50% !important;
 }
-td.active{
+td.active {
   background-color: #000 !important;
 }
-.micro-date{
+.micro-date {
   width: 12px;
-height: 12px;
-display: flex;
-justify-content: center;
-align-items: center;
-border: 1px solid;
-
+  height: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
 }
-.micro-flex{
+.micro-flex {
   padding: 8px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-width: 64%;
-font-size: 12px;
+
+  width: 64%;
+  font-size: 12px;
 }
-.micro-date span, .exact-date{
+.micro-date span,
+.exact-date {
   white-space: nowrap;
 }
