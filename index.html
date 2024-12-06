@@ -1,2400 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/style.css" />
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="images/logos_icon_lil.svg" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Airbnb | Vacation rentals, cabins, beach houses, & more</title>
-  </head>
 
-  <body>
-    <main>
-      <!-- header -->
-      <div class="header-container">
-        <!-- logo section -->
-        <div class="left-header">
-          <div class="logo-name">
-            <img
-              src="images/airbnb.svg"
-              alt=""
-              width="102"
-              height="32"
-              style="display: block"
-            />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/style.css" />
+  <link rel="stylesheet" type="text/css" href="datepicker/daterangepicker.css" />
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" href="images/logos_icon_lil.svg" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <title>Airbnb | Vacation rentals, cabins, beach houses, & more</title>
+</head>
+
+<body>
+  <!-- header -->
+  <div class="header-container">
+    <!-- logo section -->
+    <div class="left-header">
+      <div class="logo-name">
+        <img src="images/airbnb.svg" alt="" width="102" height="32" style="display: block" />
+      </div>
+      <!-- logo for mobile -->
+      <div class="logo"></div>
+    </div>
+    <!-- center section -->
+    <div class="header-center">
+      <button class="stay">
+        <span>Stays</span>
+      </button>
+      <button class="exp">
+        <span> Experiences </span>
+      </button>
+    </div>
+    <!-- right header -->
+    <div class="right-header">
+      <!-- home and lan -->
+      <div class="home-container">
+        <a href="http://" class="home">Airbnb your home</a>
+        <a href="http://" class="language">
+          <span class="lanlogo">
+            <img src="images/language-svgrepo-com.svg" alt="" width="16px" height="16px" />
+          </span>
+        </a>
+      </div>
+      <!-- sign in logo -->
+      <div class="menu">
+        <div class="hamburger">
+          <div class="line">
+            <img src="images/hamburger_menu_icon.svg" alt="" width="100%" height="100%" />
           </div>
-          <!-- logo for mobile -->
-          <div class="logo"></div>
+          <div class="avatar">
+            <img src="images/avatar.svg" alt="" width="100%" height="100%" />
+          </div>
         </div>
-        <!-- center section -->
-        <div class="header-center">
-          <button class="stay">
-            <span>Stays</span>
-          </button>
-          <button class="exp">
-            <span> Experiences </span>
-          </button>
-        </div>
-        <!-- right header -->
-        <div class="right-header">
-          <!-- home and lan -->
-          <div class="home-container">
-            <a href="http://" class="home">Airbnb your home</a>
-            <a href="http://" class="language">
-              <img
-                class="lanlogo"
-                src="images/language-svgrepo-com.svg"
-                alt=""
-                width="16px"
-                height="16px"
-              />
-            </a>
-          </div>
-          <!-- sign in logo -->
-          <div class="menu">
-            <div class="hamburger">
-              <div class="line">
-                <img
-                  src="images/hamburger_menu_icon.svg"
-                  alt=""
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <div class="avatar">
-                <img
-                  src="images/avatar.svg"
-                  alt=""
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-            </div>
-            <!-- sign in  menu -->
-            <div class="dropdown-menu">
-              <ul class="nav-menu">
-                <li>Sign up</li>
-                <li>Log in</li>
-                <hr />
-                <li>Gift cards</li>
-                <li>Airbnb your home</li>
-                <li>Host an Experience</li>
-                <li>Help</li>
-              </ul>
-            </div>
-          </div>
+        <!-- sign in  menu -->
+        <div class="dropdown-menu">
+          <ul class="nav-menu">
+            <li>Sign up</li>
+            <li>Log in</li>
+            <hr>
+            <li>Gift cards</li>
+            <li>Airbnb your home</li>
+            <li>Host an Experience</li>
+            <li>Help</li>
+          </ul>
         </div>
       </div>
-      <!-- search box -->
-      <div class="search-box">
-        <div class="search-bar">
-          <!-- where box -->
-          <div class="where-box">
-            <div class="search-item">
-              <p class="where">Where</p>
-              <input
-                type="text"
-                name=""
-                id=""
-                placeholder="Search destinations"
-                readonly
-              />
-            </div>
-          </div>
-          <!-- where section -->
-          <div class="region-select">
-            <div class="region-text">Search by region</div>
-            <div class="continents">
-              <div class="region-item">
-                <img
-                  class="region-flex"
-                  alt=""
-                  src="https://a0.muscache.com/pictures/f9ec8a23-ed44-420b-83e5-10ff1f071a13.jpg?im_w=320"
-                />
-                <div class="country-text">I’m flexible</div>
-              </div>
-              <div class="region-item">
-                <img
-                  class="Africa"
-                  alt=""
-                  src="https://a0.muscache.com/im/pictures/7e9673a5-4164-4708-a047-8d281b5980e7.jpg?im_w=320"
-                />
-                <div class="country-text">Africa</div>
-              </div>
-              <div class="region-item">
-                <img
-                  class="Italy"
-                  alt=""
-                  src="https://a0.muscache.com/im/pictures/ea5598d7-2b07-4ed7-84da-d1eabd9f2714.jpg?im_w=320"
-                />
-                <div class="country-text">Italy</div>
-              </div>
-              <div class="region-item">
-                <img
-                  class="Southeast Asia"
-                  alt=""
-                  src="https://a0.muscache.com/im/pictures/d77de9f5-5318-4571-88c7-e97d2355d20a.jpg?im_w=320"
-                />
-                <div class="country-text">Southeast Asia</div>
-              </div>
-              <div class="region-item">
-                <img
-                  class="Spain"
-                  alt=""
-                  src="https://a0.muscache.com/im/pictures/a0fd6dfc-6bec-4abb-850e-9ab78ed7bf37.jpg?im_w=320"
-                />
-                <div class="country-text">Spain</div>
-              </div>
-              <div class="region-item">
-                <img
-                  class="South America"
-                  alt=""
-                  src="https://a0.muscache.com/im/pictures/06a30699-aead-492e-ad08-33ec0b383399.jpg?im_w=320"
-                />
-                <div class="country-text">South America</div>
-              </div>
-            </div>
-          </div>
-          <!-- check in box -->
-          <div class="checkin-box search-item">
-            <p class="checkin">Check in</p>
-            <input type="text" name="" id="" placeholder="Add dates" readonly />
-          </div>
-          <!-- check out box -->
-          <div class="checkout-box search-item">
-            <p class="checkout">Check Out</p>
-            <input type="text" name="" id="" placeholder="Add dates" readonly />
-          </div>
-          <!-- date box for exp -->
-          <div class="search-item display-none date-box">
-            <p class="date">Date</p>
-            <input type="text" name="" id="" placeholder="Add dates" readonly />
-          </div>
-          <!-- guest box -->
-          <div>
-            <div class="guests-search search-item">
-              <div class="guests-box">
-                <p class="who">Who</p>
-                <input
-                  type="text"
-                  name=""
-                  id="whoInput"
-                  placeholder="Add guests"
-                  readonly
-                />
-              </div>
-              <div class="search-bt">
-                <div class="search-button">
-                  <svg
-                    class="searchicon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 32 32"
-                    aria-hidden="true"
-                    role="presentation"
-                    focusable="false"
-                    style="
-                      display: block;
-                      fill: none;
-                      height: 16px;
-                      width: 16px;
-                      stroke: white;
-                      stroke-width: 4;
-                      overflow: visible;
-                    "
-                  >
-                    <path
-                      fill="none"
-                      d="M13 24a11 11 0 1 0 0-22 11 11 0 0 0 0 22zm8-3 9 9"
-                    ></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- who section -->
-          <div class="who-menu">
-            <div class="inner-who-menu">
-              <div class="age">
-                <div class="adult-text">
-                  <div class="bold-adults bold-who-text">Adults</div>
-                  <div class="age-range">Ages 13 or above</div>
-                </div>
-                <div class="right-who-menu">
-                  <div class="plus-minus">
-                    <button class="minus-button-adult minus-button">
-                      <svg
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        role="presentation"
-                        focusable="false"
-                        style="
-                          fill: none;
-                          height: 12px;
-                          width: 12px;
-                          stroke: currentcolor;
-                          stroke-width: 5.33333;
-                          overflow: visible;
-                        "
-                      >
-                        <path d="m2 16h28"></path>
-                      </svg>
-                    </button>
-                    <div class="count" id="adultCount">2</div>
-                    <button class="plus-button-adult plus-button">
-                      <svg
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        role="presentation"
-                        focusable="false"
-                        style="
-                          fill: none;
-                          height: 12px;
-                          width: 12px;
-                          stroke: currentcolor;
-                          stroke-width: 5.33333;
-                          overflow: visible;
-                        "
-                      >
-                        <path d="m2 16h28m-14-14v28"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="age">
-                <div class="Child-text">
-                  <div class="bold-child bold-who-text">Children</div>
-                  <div class="age-range">Age 2-12</div>
-                </div>
-                <div class="right-who-menu">
-                  <div class="plus-minus">
-                    <button class="minus-button minus-button-child">
-                      <svg
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        role="presentation"
-                        focusable="false"
-                        style="
-                          fill: none;
-                          height: 12px;
-                          width: 12px;
-                          stroke: currentcolor;
-                          stroke-width: 5.33333;
-                          overflow: visible;
-                        "
-                      >
-                        <path d="m2 16h28"></path>
-                      </svg>
-                    </button>
-                    <div class="count" id="childCount">0</div>
-                    <button class="plus-button plus-button-child">
-                      <svg
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        role="presentation"
-                        focusable="false"
-                        style="
-                          fill: none;
-                          height: 12px;
-                          width: 12px;
-                          stroke: currentcolor;
-                          stroke-width: 5.33333;
-                          overflow: visible;
-                        "
-                      >
-                        <path d="m2 16h28m-14-14v28"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="age">
-                <div class="Infants-text">
-                  <div class="bold-Infants bold-who-text">Infants</div>
-                  <div class="age-range">Under 2</div>
-                </div>
-                <div class="right-who-menu">
-                  <div class="plus-minus">
-                    <button class="minus-button minus-button-infant">
-                      <svg
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        role="presentation"
-                        focusable="false"
-                        style="
-                          fill: none;
-                          height: 12px;
-                          width: 12px;
-                          stroke: currentcolor;
-                          stroke-width: 5.33333;
-                          overflow: visible;
-                        "
-                      >
-                        <path d="m2 16h28"></path>
-                      </svg>
-                    </button>
-                    <div class="count" id="infantCount">0</div>
-                    <button class="plus-button plus-button-infant">
-                      <svg
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        role="presentation"
-                        focusable="false"
-                        style="
-                          fill: none;
-                          height: 12px;
-                          width: 12px;
-                          stroke: currentcolor;
-                          stroke-width: 5.33333;
-                          overflow: visible;
-                        "
-                      >
-                        <path d="m2 16h28m-14-14v28"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!--  -->
-              <div class="pet age">
-                <div class="pet-text">
-                  <div class="bold-pet bold-who-text">Pets</div>
-                  <div>
-                    <a href="http://" class="pet-q"
-                      >Bringing a service animal?</a
-                    >
-                  </div>
-                </div>
-                <div class="right-who-menu">
-                  <div class="plus-minus">
-                    <button class="minus-button minus-button-pet">
-                      <svg
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        role="presentation"
-                        focusable="false"
-                        style="
-                          fill: none;
-                          height: 12px;
-                          width: 12px;
-                          stroke: currentcolor;
-                          stroke-width: 5.33333;
-                          overflow: visible;
-                        "
-                      >
-                        <path d="m2 16h28"></path>
-                      </svg>
-                    </button>
-                    <div class="count" id="petCount">0</div>
-                    <button class="plus-button plus-button-pet">
-                      <svg
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true"
-                        role="presentation"
-                        focusable="false"
-                        style="
-                          fill: none;
-                          height: 12px;
-                          width: 12px;
-                          stroke: currentcolor;
-                          stroke-width: 5.33333;
-                          overflow: visible;
-                        "
-                      >
-                        <path d="m2 16h28m-14-14v28"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
+  </div>
+  <!-- search box -->
+  <div class="search-box">
+    <div class="search-bar">
+      <div class="where-box search-item">
+        <p class="where">Where</p>
+        <input type="text" name="" id="" placeholder="Search destinations">
       </div>
-      <!-- icon section -->
-      <div class="category-icon">
-        <div class="icon-slider">
-          <img
-            src="/images/prev.svg"
-            alt=""
-            class="prev-btn"
-            width="16px"
-            height="16px"
-          />
-          <div class="icon-section">
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Countryside</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/im/pictures/mediaverse/category_icon/original/3e5243c8-4d15-4c6b-97e3-7ba2bb7bb880.png"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Icon</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Countryside</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/4d4a4eba-c7e4-43eb-9ce2-95e1d200d10e.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Treehouses</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Cabins</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Amazing views</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Farms</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/757deeaa-c78f-488f-992b-d3b1ecc06fc9.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Ski in/out</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Beachfront</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Lakefront</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">OMG!</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Amazing pool</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/1b6a8b70-a3b6-48b5-88e1-2243d9172c06.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Castles</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/3271df99-f071-4ecf-9128-eb2d2b1f50f0.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Tiny homes</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/9a2ca4df-ee90-4063-b15d-0de7e4ce210a.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Off the grid</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/3726d94b-534a-42b8-bca0-a0304d912260.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Trending</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Domes</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/c8e2ed05-c666-47b6-99fc-4cb6edcde6b4.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Luxe</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/687a8682-68b3-4f21-8d71-3c3aef6c1110.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Boats</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/50861fca-582c-4bcc-89d3-857fb7ca6528.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Design</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/f0c5ca0f-5aa0-4fe5-b38d-654264bacddf.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">play</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/4221e293-4770-4ea8-a4fa-9972158d4004.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Caves</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Rooms</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/4759a0a7-96a8-4dcd-9490-ed785af6df14.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Yurts</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/8b44f770-7156-4c7b-b4d3-d92549c8652f.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Arctic</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/ca25c7f3-0d1f-432b-9efa-b9f5dc6d8770.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Camping</span>
-            </div>
-            <div class="icon-item">
-              <img
-                class="icon"
-                src="https://a0.muscache.com/pictures/33848f9e-8dd6-4777-b905-ed38342bacb9.jpg"
-                alt=""
-                width="24"
-                height="24"
-              />
-              <span class="icon-text">Trulli</span>
-            </div>
-          </div>
-          <img
-            src="/images/next.svg"
-            alt=""
-            class="next-btn"
-            width="16px"
-            height="16px"
-          />
-          <!-- filter button -->
-        </div>
+      <div class="checkin-box search-item">
+        <p class="checkin">Check in</p>
+        <input type="text" name="" id="" placeholder="Add dates">
       </div>
-      <!--center section  -->
-      <div class="main-container">
-        <div class="icon-dropdown-1">
-          <div class="selected-pic">
-            <div class="pic-one pics">
-              <a href=""
-                ><img src="images/1-main.avif" alt="" />
-                <div class="text">
-                  <h5>Stay in Prince’s Purple Rain house</h5>
-                  <p>Hosted by Wendy And Lisa</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
-            <div class="pic-two pics">
-              <a href=""
-                ><img src="images/23-main.avif" alt="" />
-                <div class="text">
-                  <h5>Join the Living Room Session with Doja Cat</h5>
-                  <p>Hosted by Doja Cat</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
-            <div class="pic-three pics">
-              <a href=""
-                ><img src="images/3-main.avif" alt="" />
-                <div class="text">
-                  <h5>Playdate at Polly Pocket’s Compact</h5>
-                  <p>Hosted by Polly Pocket</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
-          </div>
+      <!-- check in dropdown -->
+      <div class="checkin-container">
+        <div class="checkin-header">
+          <button class="checkin-date">
+            Dates
+            <!-- <input type="text" id="daterange" class="checkin-input" placeholder="Dates" /> -->
+          </button>
+          <button class="checkin-month">Months</button>
+          <button class="checkin-flex">Flexible</button>
+
         </div>
-        <div class="main">
-          <div class="main-header">Past experiences</div>
-          <div class="main-pic">
-            <div class="pic-one pics">
-              <a href=""
-                ><img src="images/1-main.avif" alt="" />
-                <div class="text">
-                  <h5>Stay in Prince’s Purple Rain house</h5>
-                  <p>Hosted by Wendy And Lisa</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
+        <div class="cal-container">
+          <div id="daterange"></div>
+          <div class="micro-flex">
+            <div  class="micro-date exact-date">Exact dates</div>
+            <div  class="micro-date">
+              <img src="images/plus-minus-date.svg" alt="">
+              <span>1 day</span>
             </div>
-            <div class="pic-two pics">
-              <a href=""
-                ><img src="images/23-main.avif" alt="" />
-                <div class="text">
-                  <h5>Join the Living Room Session with Doja Cat</h5>
-                  <p>Hosted by Doja Cat</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
+            <div  class="micro-date">
+              <img src="images/plus-minus-date.svg" alt="">
+              <span>2 day</span>
             </div>
-            <div class="pic-three pics">
-              <a href=""
-                ><img src="images/3-main.avif" alt="" />
-                <div class="text">
-                  <h5>Playdate at Polly Pocket’s Compact</h5>
-                  <p>Hosted by Polly Pocket</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
+            <div  class="micro-date">
+              <img src="images/plus-minus-date.svg" alt="" >
+              <span>3 day</span>
             </div>
-            <div class="pic-four pics">
-              <a href=""
-                ><img src="images/4-main.avif" alt="" />
-                <div class="text">
-                  <h5>Sleepover at Polly Pocket’s Compact</h5>
-                  <p>Hosted by Polly Pocket</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
+            <div  class="micro-date">
+              <img src="images/plus-minus-date.svg" alt="">
+              <span>7 day</span>
             </div>
-            <div class="pic-five pics">
-              <a href=""
-                ><img src="images/24-main.avif" alt="" />
-                <div class="text">
-                  <h5>Train at the X-Mansion</h5>
-                  <p>Hosted by Jubilee</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
-            <div class="pic-six pics">
-              <a href=""
-                ><img src="images/20-main.avif" alt="" />
-                <div class="text">
-                  <h5>Live like Bollywood star Janhvi Kapoor</h5>
-                  <p>Hosted by Janhvi Kapoor</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
-            <div class="pic-seven pics">
-              <a href=""
-                ><img src="images/5-main.avif" alt="" />
-                <div class="text">
-                  <h5>Go on tour with Feid</h5>
-                  <p>Hosted by Feid</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
-            <div class="pic-eight pics">
-              <a href=""
-                ><img src="images/6-main.avif" alt="" />
-                <div class="text">
-                  <h5>Drift off in the Up house</h5>
-                  <p>Hosted by Carl Fredricksen</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
-            <div class="pic-nine pics">
-              <a href=""
-                ><img src="images/26-main.avif" alt="" />
-                <div class="text">
-                  <h5>Shrek’s Swamp</h5>
-                  <p>Hosted by Donkey</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
-            <div class="pic-ten pics">
-              <a href=""
-                ><img src="images/17-main.jpeg" alt="" />
-                <div class="text">
-                  <h5>Home Alone Holiday</h5>
-                  <p>Hosted by Buzz</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
-            <div class="pic-eleven pics">
-              <a href=""
-                ><img src="images/14-main.avif" alt="" />
-                <div class="text">
-                  <h5>Ted Lasso’s Favorite Pub</h5>
-                  <p>Hosted by Mae</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
-            <div class="pic-tweleve pics">
-              <a href=""
-                ><img src="images/18-main.avif" alt="" />
-                <div class="text">
-                  <h5>Wonderful stay in nature 30 min from A'dam</h5>
-                  <p>Hosted by Linda</p>
-                  <span>Sold out</span>
-                </div>
-              </a>
-              <button class="share-btn">
-                <img src="images/share.svg" alt="Share" />
-              </button>
-            </div>
+            <div  class="micro-date">
+              <img src="images/plus-minus-date.svg" alt="">
+              <span>14 day</span>
           </div>
-        </div>
+          </div>
+          </div>
       </div>
-    </main>
-    <footer>
-      <!-- Inspiration for future getaways -->
-      <div class="down-section">
-        <div class="inspiration-container">
-          <h6>Inspiration for future getaways</h6>
-        </div>
-        <div class="tab-list">
-          <button class="ins-btn tab-links" tabindex="0" aria-selected="false">
-            Popular
-          </button>
-          <button class="ins-btn tab-links" tabindex="1" aria-selected="false">
-            Arts & culture
-          </button>
-          <button class="ins-btn tab-links" tabindex="2" aria-selected="false">
-            Outdoors
-          </button>
-          <button class="ins-btn tab-links" tabindex="3" aria-selected="false">
-            Mountains
-          </button>
-          <button class="ins-btn tab-links" tabindex="4" aria-selected="false">
-            Beach
-          </button>
-          <button class="ins-btn tab-links" tabindex="5" aria-selected="false">
-            Unique Stays
-          </button>
-          <button class="ins-btn tab-links" tabindex="6" aria-selected="false">
-            Categories
-          </button>
-          <button class="ins-btn tab-links" tabindex="7" aria-selected="false">
-            Things to do
-          </button>
-          <button class="ins-btn tab-links" tabindex="8" aria-selected="false">
-            Travel tips & inspiration
-          </button>
-          <button class="ins-btn tab-links" tabindex="9" aria-selected="false">
-            Airbnb-friendly apartments
-          </button>
-        </div>
-        <!-- Inspiration tab content -->
-        <div class="tab-wrapper">
-          <div class="tab-content" id="popular-country">
-            <ul>
-              <li>
-                <a href="">
-                  <p>Canmore</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Benalmádena</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Marbella</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Maleny</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mijas</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Prescott</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Scottsdale</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Tucson</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Jasper</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mountain View</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Anaheim</p>
-                  <span>Family-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Devonport</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mallacoota</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Ibiza</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Monterey</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Paso Robles</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Barbara</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Sonoma</p>
-                  <span>Rentals with pools</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Fe</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Lakeside</p>
-                  <span>Lakehouse rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>La Serena</p>
-                  <span>Beachfront rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>New Braunfels</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Dubai</p>
-                  <span>Villa rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Birmingham</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="art-country tab-content" id="arts-culture">
-            <ul>
-              <li>
-                <a href="">
-                  <p>Canmore</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Benalmádena</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Marbella</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Maleny</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mijas</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Prescott</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Scottsdale</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Tucson</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Jasper</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mountain View</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Anaheim</p>
-                  <span>Family-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Devonport</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mallacoota</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Ibiza</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Monterey</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Paso Robles</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Barbara</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Sonoma</p>
-                  <span>Rentals with pools</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>New Braunfels</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Lakeside</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>La Serena</p>
-                  <span>Beachfront rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Fe</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Dubai</p>
-                  <span>Villa rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Birmingham</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="outdoors-country tab-content" id="outdoors">
-            <ul>
-              <li>
-                <a href="">
-                  <p>Canmore</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Benalmádena</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Marbella</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Maleny</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mijas</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Prescott</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Scottsdale</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Tucson</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Jasper</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mountain View</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Anaheim</p>
-                  <span>Family-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Devonport</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mallacoota</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Ibiza</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Monterey</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Paso Robles</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Barbara</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Sonoma</p>
-                  <span>Rentals with pools</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Fe</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>New Braunfels</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>La Serena</p>
-                  <span>Beachfront rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Lakeside</p>
-                  <span>Lakehouse rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Dubai</p>
-                  <span>Villa rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Birmingham</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="mountains-country tab-content" id="mountains">
-            <ul>
-              <li>
-                <a href="">
-                  <p>Canmore</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Benalmádena</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Marbella</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Maleny</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mijas</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Prescott</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Scottsdale</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Tucson</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Jasper</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mountain View</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Anaheim</p>
-                  <span>Family-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Devonport</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mallacoota</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Ibiza</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Monterey</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Paso Robles</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Barbara</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Sonoma</p>
-                  <span>Rentals with pools</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Fe</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>New Braunfels</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>La Serena</p>
-                  <span>Beachfront rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Lakeside</p>
-                  <span>Lakehouse rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Dubai</p>
-                  <span>Villa rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Birmingham</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="beach-country tab-content" id="beach">
-            <ul>
-              <li>
-                <a href="">
-                  <p>Canmore</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Benalmádena</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Marbella</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Maleny</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mijas</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Prescott</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Scottsdale</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Tucson</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Jasper</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mountain View</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Anaheim</p>
-                  <span>Family-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Devonport</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mallacoota</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Ibiza</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Monterey</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Paso Robles</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Barbara</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Sonoma</p>
-                  <span>Rentals with pools</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Fe</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Lakeside</p>
-                  <span>Lakehouse rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>La Serena</p>
-                  <span>Beachfront rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>New Braunfels</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Dubai</p>
-                  <span>Villa rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Birmingham</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="unique-country tab-content" id="unique-stays">
-            <ul>
-              <li>
-                <a href="">
-                  <p>Canmore</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Benalmádena</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Marbella</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Maleny</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mijas</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Prescott</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Scottsdale</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Tucson</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Jasper</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mountain View</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Anaheim</p>
-                  <span>Family-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Devonport</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mallacoota</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Ibiza</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Monterey</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Paso Robles</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Barbara</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Sonoma</p>
-                  <span>Rentals with pools</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Fe</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>New Braunfels</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>La Serena</p>
-                  <span>Beachfront rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Lakeside</p>
-                  <span>Lakehouse rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Dubai</p>
-                  <span>Villa rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Birmingham</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="categories-country tab-content" id="categories">
-            <ul>
-              <li>
-                <a href="">
-                  <p>Amazing pools</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Arctic</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Camping</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Campers</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Castles</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Containers</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Countryside</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Design</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Earth homes</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Farms</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Vineyards</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>National parks</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>OMG!</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Tiny homes</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Towers</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Windmills</p>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Luxe</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="things-country tab-content" id="things-to-do">
-            <ul>
-              <li>
-                <a href="">
-                  <p>Canmore</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Benalmádena</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Marbella</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Maleny</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mijas</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Prescott</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Scottsdale</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Tucson</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Jasper</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mountain View</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Anaheim</p>
-                  <span>Family-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Devonport</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mallacoota</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Ibiza</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Monterey</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Paso Robles</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Barbara</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Sonoma</p>
-                  <span>Rentals with pools</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Fe</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>New Braunfels</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>La Serena</p>
-                  <span>Beachfront rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Lakeside</p>
-                  <span>Lakehouse rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Dubai</p>
-                  <span>Villa rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Birmingham</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="travel-country tab-content" id="travel-tips">
-            <ul>
-              <li>
-                <a href="">
-                  <p>Family travel hub</p>
-                  <span>Tips and inspiration</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Family budget travel</p>
-                  <span>Get there for less</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Vacation ideas for any budget</p>
-                  <span>Make it special without making it spendy</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Travel Europe on a budget</p>
-                  <span>How to take the kids to Europe for less</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Outdoor adventure</p>
-                  <span>Explore nature with the family</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Bucket list national parks</p>
-                  <span>Must-see parks for family travel</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Kid-friendly state parks</p>
-                  <span>Check out these family-friendly hikes</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="friendly-country tab-content" id="friendly">
-            <ul>
-              <li>
-                <a href="">
-                  <p>Canmore</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Benalmádena</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Marbella</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Maleny</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mijas</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Prescott</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Scottsdale</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Tucson</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Jasper</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mountain View</p>
-                  <span>Cabin rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Anaheim</p>
-                  <span>Family-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Devonport</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Mallacoota</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Ibiza</p>
-                  <span>Vacation rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Monterey</p>
-                  <span>Apartment rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Paso Robles</p>
-                  <span>Cottage rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Barbara</p>
-                  <span>Pet-friendly rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Sonoma</p>
-                  <span>Rentals with pools</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Santa Fe</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Lakeside</p>
-                  <span>Lakehouse rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>La Serena</p>
-                  <span>Beachfront rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>New Braunfels</p>
-                  <span>Condo rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Dubai</p>
-                  <span>Villa rentals</span>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <p>Birmingham</p>
-                  <span>House rentals</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div class="checkout-box search-item">
+        <p class="checkout">Check Out</p>
+        <input type="text" name="" id="" placeholder="Add dates">
       </div>
-      <div class="footer">
-        <div class="up-footer">
-          <div class="support-sec">
-            <div class="sec-header">Support</div>
-            <a href="http://">Help Center</a>
-            <a href="http://">AirCover</a>
-            <a href="http://">Anti-discrimination</a>
-            <a href="http://">Disability support</a>
-            <a href="http://"> Cancellation options</a>
-            <a href="http://"> Report neighborhood concern</a>
-          </div>
-          <div class="host-sec">
-            <div class="sec-header">Hosting</div>
-            <a href="http://">Airbnb your home</a>
-            <a href="http://">AirCover for Hosts</a>
-            <a href="http://">Hosting resources</a>
-            <a href="http://">Community forum</a>
-            <a href="http://">Hosting responsibly</a>
-            <a href="http://">Airbnb-friendly apartments</a>
-            <a href="http://">Join a free Hosting class</a>
-            <a href="http://">Find a co‑host</a>
-          </div>
-          <div class="airbnb-sec">
-            <div class="sec-header">Airbnb</div>
-            <a href="http://">Newsroom</a>
-            <a href="http://">New features</a>
-            <a href="http://">Careers</a>
-            <a href="http://">Investors</a>
-            <a href="http://">Gift cards</a>
-            <a href="http://">Airbnb.org emergency stays</a>
-          </div>
+      <div class="guests-box">
+        <div class="search-item">
+          <p class="who">Who</p>
+          <input type="text" name="" id="" placeholder="Add guests">
         </div>
-        <div class="down-footer">
-          <div class="left-footer">
-            <p>© 2024 Airbnb,Inc.</p>
-            <a href="http://">Terms</a><span>.</span>
-            <a href="http://">Sitemap</a><span>.</span>
-            <a href="http://">Privacy</a><span>.</span>
-            <a href="http://">Your Privacy Choices</a>
-            <svg width="26" height="12" fill="none">
-              <rect
-                x="0.5"
-                y="0.5"
-                width="25"
-                height="11"
-                rx="5.5"
-                fill="#fff"
-              ></rect>
-              <path d="M14 1h7a5 5 0 010 10H11l3-10z" fill="#06F"></path>
-              <path
-                d="M4.5 6.5l1.774 1.774a.25.25 0 00.39-.049L9.5 3.5"
-                stroke="#06F"
-                stroke-linecap="round"
-              ></path>
-              <path
-                d="M16.5 3.5L19 6m0 0l2.5 2.5M19 6l2.5-2.5M19 6l-2.5 2.5"
-                stroke="#fff"
-                stroke-linecap="round"
-              ></path>
-              <rect
-                x="0.5"
-                y="0.5"
-                width="25"
-                height="11"
-                rx="5.5"
-                stroke="#06F"
-              ></rect>
+        <div class="search-bt">
+          <div class="search-button">
+            <svg class="searchicon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true"
+              role="presentation" focusable="false"
+              style="display: block; fill:none ; height: 16px; width: 16px; stroke:white ; stroke-width: 4; overflow: visible;">
+              <path fill="none" d="M13 24a11 11 0 1 0 0-22 11 11 0 0 0 0 22zm8-3 9 9"></path>
             </svg>
           </div>
-          <div class="right-footer">
-            <img
-              src="public/images/language-svgrepo-com.svg"
-              alt=""
-              width="16px"
-              height="16px"
-            />
-            <a href="http://">English(US)</a>
-            <p>€ EUR</p>
-            <img
-              src="public/images/facebook.svg"
-              alt=""
-              width="16px"
-              height="16px"
-            />
-            <img
-              src="public/images/twitter.svg"
-              alt=""
-              width="16px"
-              height="16px"
-            />
-            <img
-              src="public/images/insta.svg"
-              alt=""
-              width="16px"
-              height="16px"
-            />
+        </div>
+      </div>
+      <!-- who section -->
+      <div class="who-menu">
+        <div class="inner-who-menu">
+          <div class="age">
+            <div class="adult-text">
+              <div class="bold-adults bold-who-text">Adults</div>
+              <div class="age-range">Ages 13 or above</div>
+            </div>
+            <div class="right-who-menu">
+              <div class="plus-minus">
+                <button class="minus-button">
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                    focusable="false"
+                    style=" fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                    <path d="m2 16h28"></path>
+                  </svg>
+                </button>
+                <div class="count">0</div>
+                <button class="plus-button adult-button">
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                    focusable="false"
+                    style=" fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                    <path d="m2 16h28m-14-14v28"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="age">
+            <div class="Child-text">
+              <div class="bold-child bold-who-text">Children</div>
+              <div class="age-range">Age 2-12</div>
+            </div>
+            <div class="right-who-menu">
+              <div class="plus-minus">
+                <button class="minus-button">
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                    focusable="false"
+                    style=" fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                    <path d="m2 16h28"></path>
+                  </svg>
+                </button>
+                <div class="count">0</div>
+                <button class="plus-button">
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                    focusable="false"
+                    style=" fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                    <path d="m2 16h28m-14-14v28"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="age">
+            <div class="Infants-text">
+              <div class="bold-Infants bold-who-text">Infants</div>
+              <div class="age-range">Under 2</div>
+            </div>
+            <div class="right-who-menu">
+              <div class="plus-minus">
+                <button class="minus-button">
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                    focusable="false"
+                    style=" fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                    <path d="m2 16h28"></path>
+                  </svg>
+                </button>
+                <div class="count">0</div>
+                <button class="plus-button">
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                    focusable="false"
+                    style=" fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                    <path d="m2 16h28m-14-14v28"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="pet age">
+            <div class="pet-text">
+              <div class="bold-pet bold-who-text">Pets</div>
+              <div>
+                <a href="http://" class="pet-q">Bringing a service animal?</a>
+              </div>
+            </div>
+            <div class="right-who-menu">
+              <div class="plus-minus">
+                <button class="minus-button">
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                    focusable="false"
+                    style=" fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                    <path d="m2 16h28"></path>
+                  </svg>
+                </button>
+                <div class="count">0</div>
+                <button class="plus-button">
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation"
+                    focusable="false"
+                    style=" fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;">
+                    <path d="m2 16h28m-14-14v28"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
-    <script src="src/main.ts"></script>
-  </body>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <!-- icon section -->
+  <div class="category-icon">
+    <div class="icon-slider">
+      <img src="/images/prev.svg" alt="" class="prev-btn" width="16px" height="16px">
+      <div class="icon-section">
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Countryside</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon"
+            src="https://a0.muscache.com/im/pictures/mediaverse/category_icon/original/3e5243c8-4d15-4c6b-97e3-7ba2bb7bb880.png"
+            alt="" width="24" height="24" />
+          <span class="icon-text">Icon</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/4d4a4eba-c7e4-43eb-9ce2-95e1d200d10e.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Treehouses</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Cabins</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Amazing views</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Farms</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/757deeaa-c78f-488f-992b-d3b1ecc06fc9.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Ski in/out</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Beachfront</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Lakefront</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">OMG!</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Amazing pool</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/1b6a8b70-a3b6-48b5-88e1-2243d9172c06.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Castles</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/3271df99-f071-4ecf-9128-eb2d2b1f50f0.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Tiny homes</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/9a2ca4df-ee90-4063-b15d-0de7e4ce210a.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Off the grid</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/3726d94b-534a-42b8-bca0-a0304d912260.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Trending</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/89faf9ae-bbbc-4bc4-aecd-cc15bf36cbca.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Domes</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/c8e2ed05-c666-47b6-99fc-4cb6edcde6b4.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Luxe</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/687a8682-68b3-4f21-8d71-3c3aef6c1110.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Boats</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/50861fca-582c-4bcc-89d3-857fb7ca6528.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Design</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/f0c5ca0f-5aa0-4fe5-b38d-654264bacddf.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">play</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/4221e293-4770-4ea8-a4fa-9972158d4004.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Caves</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Rooms</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/4759a0a7-96a8-4dcd-9490-ed785af6df14.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Yurts</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/8b44f770-7156-4c7b-b4d3-d92549c8652f.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Arctic</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/ca25c7f3-0d1f-432b-9efa-b9f5dc6d8770.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Camping</span>
+        </div>
+        <div class="icon-item">
+          <img class="icon" src="https://a0.muscache.com/pictures/33848f9e-8dd6-4777-b905-ed38342bacb9.jpg" alt=""
+            width="24" height="24" />
+          <span class="icon-text">Trulli</span>
+        </div>
+      </div>
+      <img src="/images/next.svg" alt="" class="next-btn" width="16px" height="16px">
+      <!-- filter button -->
+    </div>
+    <div class="filter-button">
+      <div class="filter-icon">
+        <img src="images/filter.svg" alt="" width="16" height="16" />
+        <span class="filter-text">Filters</span>
+      </div>
+    </div>
+  </div>
+  <!-- main box -->
+  <!-- Inspiration for future getaways -->
+  <!-- Footer -->
+  <!-- footer links -->
+  <script src="src/main.ts"></script>
+  <script type="text/javascript" src="datepicker/js/jquery.min.js"></script>
+  <script type="text/javascript" src="datepicker/js/moment.min.js"></script>
+  <script type="text/javascript" src="datepicker/js/daterangepicker.min.js"></script>
+
+  <script type="text/javascript">
+  
+
+  </script>
+</body>
+
 </html>
