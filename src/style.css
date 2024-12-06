@@ -1,32 +1,19 @@
 @font-face {
   font-family: "Airbnb Cereal VF";
-  src: url(/font/AirbnbCerealVF_W_Wght.woff2);
+  src: url(/fonts/AirbnbCerealVF_W_Wght.woff2);
 }
-
 @font-face {
   font-family: "Airbnb Cereal VF Cyril";
-  src: url(/font/AirbnbCerealVF_Cyril_W_Wght.woff2);
+  src: url(/fonts/AirbnbCerealVF_Cyril_W_Wght.woff2);
 }
-
 body {
   width: 100vw;
   overflow-x: hidden;
+  padding: 0 40px;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Airbnb Cereal VF";
-}
-main {
-  padding: 0 80px;
-}
-.hamburger,
-.language,
-.home,
-.exp,
-.stay,
-.logo-name,
-.plus-button,
-.minus-button {
-  cursor: pointer;
+  font-family: "Airbnb Cereal VF", Circular, -apple-system, BlinkMacSystemFont,
+    Roboto, "Helvetica Neue", sans-serif;
 }
 /* header section */
 .header-container {
@@ -35,11 +22,18 @@ main {
   align-items: center;
   height: 80px;
 }
-
+.hamburger,
+.language,
+.home,
+.exp,
+.stay,
+.logo-name,
+.plus-button {
+  cursor: pointer;
+}
 .left-header {
   flex: 1;
 }
-
 .header-center {
   display: flex;
   align-items: center;
@@ -61,13 +55,12 @@ main {
   transition: 0.2s ease-in;
   color: #b1aeae;
 }
-.stay:hover,
+.stay,
 .exp:hover {
   color: #444242;
   background-color: #f2f1f1;
   border-radius: 22px;
 }
-
 .stay button,
 .exp button {
   font-size: 1rem;
@@ -78,46 +71,31 @@ main {
   border-radius: 3rem;
   font-family: "Airbnb Cereal VF";
 }
-
 .home {
   text-decoration: none;
   color: black;
   padding: 12px;
 }
-
 .home:hover {
   background-color: #ebebeb;
   border-radius: 22px;
 }
-
 .home-container {
   margin-right: 8px;
-  margin-right: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-
 .language {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 12px;
 }
-
 .language:hover {
+  border-radius: 22px;
   background-color: #ebebeb;
 }
-
 .right-header {
   display: flex;
   justify-content: end;
   align-items: center;
   flex: 1;
 }
-
 .menu {
   position: relative;
 }
@@ -127,23 +105,19 @@ main {
   padding: 0px;
   margin: 0;
 }
-
 .nav-menu li {
   padding: 10px;
   font-size: 14px;
 }
-
 .nav-menu li:hover {
   background-color: #f1f1f1;
   border-radius: 4px;
 }
-
 hr {
   border: none;
   border-top: 1px solid #ddd;
   margin: 10px 0;
 }
-
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -156,11 +130,9 @@ hr {
   width: 200px;
   padding: 10px;
 }
-
 .menu.active .dropdown-menu {
   display: block;
 }
-
 .avatar {
   width: 30px;
   height: 30px;
@@ -178,21 +150,17 @@ hr {
   position: relative;
   transition: 0.2s ease-in-out;
 }
-
 .hamburger:hover {
   box-shadow: 0px 3px 7px 1px #d7cdcd;
 }
-
 .avatar,
 .line {
   height: 100%;
 }
-
 .line {
   height: 16px;
   width: 16px;
 }
-
 /* search box */
 .search-box {
   width: 100%;
@@ -200,8 +168,8 @@ hr {
   justify-content: center;
   align-items: center;
 }
-
 .search-bar {
+  width: 848px;
   height: 66px;
   border: 0.5px solid #d4cfcf;
   border-radius: 40px;
@@ -212,92 +180,57 @@ hr {
   align-self: center;
   position: relative;
 }
-
 .where-box {
   width: 230px;
 }
-
 .where-box p,
 .where-box input {
-  width: 150px;
+  width: 218px;
 }
-
 .where-box input,
 .checkin-box input,
 .checkout-box input,
-.guests-box input,
-.date-box input {
+.guests-box input {
   border: none;
   height: 20px;
   border-radius: 10px;
 }
-
 .where-box input:hover,
 .checkin-box input:hover,
 .checkout-box input:hover,
-.guests-box input:hover,
-.date-box input:hover {
+.guests-box input:hover {
   background-color: #f2f1f1;
-}
-.where-box,
-.checkout-box,
-.checkin-box {
-  position: relative;
-}
-.where-box::after,
-.date-box::after,
-.checkout-box::after,
-.checkin-box ::after {
-  width: 1px;
-  height: 40px;
-  background-color: #dfdfdf;
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 input:focus {
   border: none;
   outline: none;
 }
-
 .checkin-box {
   width: 140px;
 }
-
 .checkin-box p,
 .checkin-box input {
   width: 92px;
-}
-#whoInput {
-  display: block;
 }
 
 .checkout-box {
   width: 140px;
 }
-
 .checkout-box p,
 .checkout-box input {
   width: 92px;
-}
-.date-box {
-  width: 280px;
 }
 
 .guests-box {
   border-radius: 32px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
-
 .guests-box p,
 .guests-box input {
   width: 183px;
 }
-
 .where,
 .checkin,
 .checkout,
@@ -305,49 +238,37 @@ input:focus {
   font-size: 14px;
   font-weight: 700;
 }
-
 .search-item {
   padding: 12px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 32px;
-  position: relative;
 }
-
 .bg-white {
   background-color: white;
 }
-
 .search-item p {
   margin: 0;
 }
-
 .search-item input {
   background-color: transparent;
   cursor: pointer;
 }
-
 .search-item input:hover {
   background-color: #dddddd;
 }
-
 .search-item:hover,
 .guests-box:hover {
   background-color: #dddddd;
   cursor: pointer;
 }
-
 .bg-grey {
   background-color: #ebebeb;
 }
-
 .search-bt {
   padding-right: 5px;
-  position: absolute;
-  right: 0;
 }
-
 .search-button {
   width: 48px;
   height: 48px;
@@ -359,77 +280,16 @@ input:focus {
   transition: background-color 0.3s ease-in;
   z-index: 0;
 }
-
 .search-button:hover {
   background-color: #fa2229;
   cursor: pointer;
-}
-
-.guests-search {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-/* where dropdown */
-.region-select {
-  display: none;
-  margin-top: 12px;
-  padding: 32px 24px 24px 24px;
-  width: 43%;
-  z-index: 2;
-  background: #ffffff;
-  border-radius: 32px;
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
-  top: 100%;
-  position: absolute;
-  left: 0;
-  height: auto;
-}
-.region-select.active {
-  display: block;
-}
-.continents {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 0 auto;
-}
-.region-text {
-  margin: 0 0 16px 8px;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: "Airbnb Cereal VF";
-}
-
-.region-item img {
-  width: 100%;
-  height: 100px;
-  cursor: pointer;
-  border-radius: 10px;
-  margin-bottom: 0.4rem;
-  transition: transform 0.25s ease;
-  border: 1px solid #dddddd;
-}
-.region-item {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-}
-.region-item:hover {
-  background-color: #ebebeb;
-  border-radius: 1rem;
-}
-.country-text {
-  font-size: 14px;
-  font-family: "Airbnb Cereal VF";
-  margin: 0 2px;
 }
 /* dropdown who */
 .who-menu {
   display: none;
   position: absolute;
   right: 0;
-  z-index: 2;
+  z-index: 1;
   background: #ffffff;
   border-radius: 32px;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
@@ -439,11 +299,9 @@ input:focus {
   padding: 16px 32px;
   top: 100%;
 }
-
 .who-menu.active {
   display: block;
 }
-
 .age {
   display: flex;
   justify-content: space-between;
@@ -451,76 +309,49 @@ input:focus {
   gap: 70px;
   border-bottom: 1px solid #ebebeb;
 }
-
 .inner-who-menu {
   padding-left: 6px;
   justify-content: space-between;
 }
-
 .plus-minus {
   display: inline-flex;
   gap: 10px;
   width: 104px;
   justify-content: center;
-  align-items: center;
 }
-
 .count {
   text-align: center;
   position: relative;
-}
-
-.minus-button.disabled {
-  color: #ececec;
 }
 .plus-button,
 .minus-button {
   border-radius: 50%;
   padding: 0;
   margin: 0;
-  border: 1px solid #d8d8d8;
+  border: 1px solid black;
   height: 32px;
   width: 32px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-
 .plus-button:hover {
   color: #222222;
   border-color: #222222;
   background: white;
 }
-
 .minus-button svg {
   text-align: center;
-  color: rgb(106, 106, 106);
 }
-.plus-button svg {
-  color: rgb(106, 106, 106);
-}
-
 .bold-who-text {
   font-weight: bold;
 }
-
 .age-range {
   padding-top: 4px;
   color: #797979;
 }
-
 .pet-q {
   padding-top: 4px;
   color: #797979;
 }
-.display-none {
-  display: none;
-}
-.display-block {
-  display: block;
-}
-
 /* icon section */
 .category-icon {
   display: flex;
@@ -539,16 +370,14 @@ input:focus {
   flex-wrap: nowrap;
   overflow: hidden;
 }
-
 .icon-slider {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 90%;
   margin-top: 20px;
   position: relative;
   justify-content: center;
 }
-
 .icon-item {
   display: flex;
   flex-direction: column;
@@ -564,15 +393,7 @@ input:focus {
 .icon-item:hover {
   opacity: 1;
 }
-.icon-item::after {
-  width: 30px;
-  height: 2px;
-  content: "";
-  border-radius: 20px;
-}
-.icon-item:hover::after {
-  background-color: #717171;
-}
+
 .icon {
   width: 24px;
   height: 24px;
@@ -584,13 +405,10 @@ input:focus {
   background-color: transparent;
   flex-direction: column;
 }
-
 .icon-text {
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
-  font-family: "Airbnb Cereal VF";
 }
-
 .prev-btn,
 .next-btn {
   background-color: #fff;
@@ -609,14 +427,12 @@ input:focus {
 .next-btn {
   right: 10px;
 }
-
 /* filter button */
 .filter-button {
   display: flex;
   align-items: center;
   border-radius: 25px;
 }
-
 .filter-icon {
   display: flex;
   border-radius: 10px;
@@ -631,280 +447,6 @@ input:focus {
 .filter-text {
   font-size: 14px;
 }
-
-/* main */
-
-.main-container {
-  padding: 20px;
-}
-
-.main-header {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.main-pic {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.pics {
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out;
-  height: 360px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.pics img {
-  width: 90%;
-  height: 70%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.pics a {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.pics h5 {
-  font-size: 16px;
-  margin: 0;
-  color: black;
-  white-space: nowrap;
-  font-family: "Airbnb Cereal VF";
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: 500;
-}
-
-.pics p {
-  font-size: 14px;
-  color: #555;
-  margin: 0;
-}
-
-.pics span {
-  display: block;
-  font-size: 12px;
-  color: black;
-  font-weight: bold;
-  margin: 0;
-}
-
-.pics .text {
-  padding-top: 5px;
-  background-color: white;
-  text-align: left;
-  width: 80%;
-}
-
-.share-btn {
-  position: absolute;
-  top: 13px;
-  right: 40px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
-  border-radius: 50%;
-  padding: 8px;
-  cursor: pointer;
-  z-index: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-.share-btn img {
-  width: 14px;
-  height: 14px;
-}
-
-/* Inspiration  */
-.down-section {
-  padding: 48px 40px;
-}
-
-.inspiration-container h6 {
-  margin-bottom: 8px;
-  font-size: 22px;
-  font-family: "Airbnb Cereal VF";
-  font-weight: 500;
-}
-
-.ins-btn {
-  border-radius: 8px;
-  margin: 6px 6px 6px -10px;
-  padding: 10px;
-  height: 40px;
-  position: relative;
-  border: none;
-  background-color: transparent;
-  float: left;
-  outline: none;
-  cursor: pointer;
-  transition: 0.3s;
-  font-family: "Airbnb Cereal VF";
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 14px;
-  opacity: 0.6;
-}
-
-.ins-btn:hover {
-  opacity: 1;
-}
-
-.tab-content {
+.filter-dropdown {
   display: none;
-}
-
-.tab-list {
-  overflow: hidden;
-  width: 100%;
-  border-bottom: 1px solid black;
-}
-
-.tab-content.active {
-  display: block;
-}
-
-.tab-content ul {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.tab-content ul li {
-  box-sizing: border-box;
-}
-
-.tab-content ul li a {
-  text-decoration: none;
-  color: #333;
-}
-
-.tab-content ul li p {
-  font-size: 14px;
-  margin: 0;
-  font-family: "Airbnb Cereal VF Cyril";
-  font-weight: 500;
-  font-style: inherit;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.tab-content ul li span {
-  font-size: 14px;
-  color: #888;
-  font-family: "roboto";
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.tab-wrapper {
-  padding-top: 32px;
-}
-
-.selected-pic {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: 12px;
-}
-/* footer */
-.footer {
-  padding: 0 80px;
-  background-color: #f8f8f8;
-}
-
-.up-footer {
-  width: 1360px;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  gap: 8px;
-  align-items: start;
-}
-.sec-header {
-  font-size: 20px;
-  margin-bottom: 12px;
-  text-align: left;
-  font-family: "roboto";
-  font-size: 14px;
-  font-weight: 500;
-}
-.support-sec,
-.host-sec,
-.airbnb-sec {
-  padding: 48px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 12px;
-  font-family: "roboto";
-  font-weight: normal;
-}
-.footer a {
-  display: block;
-  color: black;
-  text-decoration: none;
-  font-size: 16px;
-  opacity: 0.9;
-}
-.footer a:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  opacity: 1;
-}
-.down-footer {
-  display: flex;
-  width: 1360px;
-  height: 68px;
-  justify-content: space-between;
-  border-top: 1px solid #e3e3e3;
-  margin-top: 0;
-}
-.left-footer {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 4px;
-  gap: 10px;
-}
-.left-footer p {
-  margin: 0;
-}
-.left-footer a {
-  font-size: 14px;
-  font-family: "roboto";
-}
-.right-footer {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  cursor: pointer;
-  font-size: 14px;
-}
-.left-footer span {
-  margin: 0;
-  color: #717171;
-}
-.right-footer svg {
-  width: 26px;
-  height: 12px;
-}
-.right-footer img {
-  width: 16px;
-  height: 16px;
 }
