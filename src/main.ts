@@ -144,6 +144,133 @@ minusButton?.addEventListener("click", () => {
   }
 });
 
+// تابع برای دریافت اتاق‌ها بر اساس categoryId
+function fetchRoomsByCategory(categoryId: number) {
+  fetch(`/api/rooms?categoryId=${categoryId}`)
+      .then(response => response.json())
+      .then(rooms => {
+          const mainPicContainer = document.querySelector(".main-pic") as HTMLElement;
+
+          // پاک کردن محتوای قبلی
+          mainPicContainer.innerHTML = '';
+
+          // نمایش اتاق‌ها در صفحه
+          rooms.forEach((room: { id: number; name: string; location: string; price_per_night: number; images: string }) => {
+              const roomElement = document.createElement("div");
+              roomElement.className = "pics";
+              roomElement.innerHTML = `
+                  <a href="#">
+                      <img src="${room.images}" alt="${room.name}" />
+                      <div class="text">
+                          <h5>${room.name}</h5>
+                          <p>${room.location}</p>
+                          <span>$${room.price_per_night} per night</span>
+                      </div>
+                  </a>
+                  <button class="share-btn">
+                      <img src="src/images/share.svg" alt="Share" />
+                  </button>
+              `;
+
+              mainPicContainer.appendChild(roomElement);
+          });
+      })
+      .catch(error => console.error('Error fetching rooms:', error));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // دریافت و نمایش دسته‌بندی‌ها
+  fetch('/api/categories')
+      .then(response => response.json())
+      .then(categories => {
+          const iconSection = document.querySelector(".icon-section") as HTMLElement;
+          iconSection.innerHTML = '';
+
+          categories.forEach((category: { id: number; name: string; icon_url: string }) => {
+              const categoryElement = document.createElement("div");
+              categoryElement.className = "icon-item";
+              categoryElement.innerHTML = `
+                  <img class="icon" src="${category.icon_url}" alt="${category.name}" width="24" height="24" />
+                  <span class="icon-text">${category.name}</span>
+              `;
+
+              categoryElement.addEventListener("click", () => {
+                  fetchRoomsByCategory(category.id); // استفاده از تابع
+              });
+
+              iconSection.appendChild(categoryElement);
+          });
+
+          // نمایش اتاق‌های مربوط به اولین دسته‌بندی به طور پیش‌فرض
+          if (categories.length > 0) {
+              fetchRoomsByCategory(categories[0].id); // استفاده از تابع
+          }
+      })
+      .catch(error => console.error('Error fetching categories:', error));
+});
+// تابع برای دریافت اتاق‌ها بر اساس categoryId
+function fetchRoomsByCategory(categoryId: number) {
+  fetch(`/api/rooms?categoryId=${categoryId}`)
+      .then(response => response.json())
+      .then(rooms => {
+          const mainPicContainer = document.querySelector(".main-pic") as HTMLElement;
+
+          // پاک کردن محتوای قبلی
+          mainPicContainer.innerHTML = '';
+
+          // نمایش اتاق‌ها در صفحه
+          rooms.forEach((room: { id: number; name: string; location: string; price_per_night: number; images: string }) => {
+              const roomElement = document.createElement("div");
+              roomElement.className = "pics";
+              roomElement.innerHTML = `
+                  <a href="#">
+                      <img src="${room.images}" alt="${room.name}" />
+                      <div class="text">
+                          <h5>${room.name}</h5>
+                          <p>${room.location}</p>
+                          <span>$${room.price_per_night} per night</span>
+                      </div>
+                  </a>
+                  <button class="share-btn">
+                      <img src="src/images/share.svg" alt="Share" />
+                  </button>
+              `;
+
+              mainPicContainer.appendChild(roomElement);
+          });
+      })
+      .catch(error => console.error('Error fetching rooms:', error));
+}
+document.addEventListener("DOMContentLoaded", () => {
+  // دریافت و نمایش دسته‌بندی‌ها
+  fetch('/api/categories')
+      .then(response => response.json())
+      .then(categories => {
+          const iconSection = document.querySelector(".icon-section") as HTMLElement;
+          iconSection.innerHTML = '';
+
+          categories.forEach((category: { id: number; name: string; icon_url: string }) => {
+              const categoryElement = document.createElement("div");
+              categoryElement.className = "icon-item";
+              categoryElement.innerHTML = `
+                  <img class="icon" src="${category.icon_url}" alt="${category.name}" width="24" height="24" />
+                  <span class="icon-text">${category.name}</span>
+              `;
+
+              categoryElement.addEventListener("click", () => {
+                  fetchRoomsByCategory(category.id);
+              });
+
+              iconSection.appendChild(categoryElement);
+          });
+
+          // نمایش اتاق‌های مربوط به اولین دسته‌بندی به طور پیش‌فرض
+          if (categories.length > 0) {
+              fetchRoomsByCategory(categories[0].id);
+          }
+      })
+      .catch(error => console.error('Error fetching categories:', error));
+});
 // who Button
 const plusChildButton = document.querySelector(".plus-button-child");
 const minusChildButton = document.querySelector(".minus-button-child");
