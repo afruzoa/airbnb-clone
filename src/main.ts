@@ -41,7 +41,36 @@ nextBtn.addEventListener("click", () => {
 
 iconSection.addEventListener("scroll", updateButtonVisibility);
 updateButtonVisibility();
-
+// fetch data
+        fetch('http://localhost:3000/api/categories')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const itemsList = document.getElementById('categories-icon');
+                // Render items in the list
+                data.forEach((category: { name: string; icon_url: string; }) => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<div class="icon-item">
+              <img
+                class="icon"
+                src="${category.icon_url}"
+                alt="${category.name}"
+                width="24"
+                height="24"
+              />
+              <span class="icon-text">${category.name}</span>
+            </div>
+                    `;
+                    itemsList?.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
 // who-menu
 const guests = document.querySelector(".guests-search") as HTMLElement;
 const guestMenu = document.querySelector(".who-menu") as HTMLElement;
