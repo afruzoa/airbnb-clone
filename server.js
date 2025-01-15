@@ -1,28 +1,43 @@
-import express from "express";
-import ViteExpress from "vite-express";
-import categoriesRoute from './routes/categories.js';
-import db from './table.js'; 
-const app = express();
-app.use('/api', categoriesRoute);
-app.get('/api/rooms', (req, res) => {
-    const { categoryId } = req.query; // دریافت categoryId از query string
-    if (!categoryId) {
-      return res.status(400).send('Category ID is required');
-    }
-  
-    db.all(`
-      SELECT rooms.id, rooms.name, rooms.location, rooms.price_per_night, rooms.images
-      FROM rooms
-      JOIN category_room ON rooms.id = category_room.room_id
-      WHERE category_room.category_id = ?
-    `, [categoryId], (err, rows) => {
-      if (err) {
-        return res.status(500).send('Error fetching rooms');
-      }
-      res.json(rows);
-    });
-  });
-  
-app.get("/message", (_, res) => res.send("Hello from express!"));
+import express from 'express';
+import ViteExpress from 'vite-express';
+import pkg from 'sqlite3'; // استفاده از import پیش‌فرض برای sqlite3
+const { Database } = pkg;
 
-ViteExpress.listen(app, 3000, () => console.log("Server is listening..."));
+import db from './server/table.js'; // اتصال به پایگاه داده
+import categoriesRoute from './routes/categories.js'; // ایمپورت روت‌های دسته‌بندی
+import roomsRoute from './routes/rooms.js';
+
+const app = express();
+const port = 3000;
+app.use('/api/categories', categoriesRoute);
+app.use('/api/rooms', roomsRoute);
+app.get('/api/categories', (req, res) => {
+  db.all("SELECT * FROM categories", (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(rows);
+  });
+});
+
+// مسیر GET برای دریافت اتاق‌ها بر اساس categoryId
+app.get('/api/rooms/:categoryId', (req, res) => {
+  const categoryId = req.params.categoryId;
+  const query = `
+    SELECT rooms.* FROM rooms
+    JOIN category_room ON rooms.id = category_room.roomId
+    WHERE category_room.categoryId = ?
+  `;
+
+  db.all(query, [categoryId], (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(rows);
+  });
+});
+
+// راه‌اندازی Vite برای Front-end
+ViteExpress.listen(app, port, () => console.log(`Server is running on http://localhost:${port}`));

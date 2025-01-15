@@ -1,19 +1,18 @@
+// routes/categories.js
 import express from 'express';
-import db from '../table.js';  
+import db from '../server/table.js';
+
 const router = express.Router();
 
-
-router.get('/categories', (req, res) => {
-    const query = 'SELECT * FROM categories';
-
-    db.all(query, [], (err, rows) => {
-        if (err) {
-            console.error('Error fetching categories:', err.message);
-            res.status(500).json({ error: 'Database error' });
-        } else {
-            res.json(rows);
-        }
-    });
+// مسیر GET برای دریافت دسته‌بندی‌ها
+router.get('/', (req, res) => {
+  db.all("SELECT * FROM categories", (err, rows) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(rows);
+  });
 });
 
 export default router;
