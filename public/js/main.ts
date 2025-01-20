@@ -51,7 +51,6 @@ updateButtonVisibility();
             })
             .then(data => {
                 const itemsList = document.getElementById('categories-icon');
-                // Render items in the list
                 data.forEach((category: { name: string; icon_url: string; }) => {
                     const listItem = document.createElement('li');
                     listItem.innerHTML = `<div class="icon-item">

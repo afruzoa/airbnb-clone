@@ -1,8 +1,6 @@
 import sqlite3 from 'sqlite3';
-const { Database } = sqlite3;
 
-// Create or connect to the database
-const db = new Database('./database.db', (err) => {
+const db = new Database('./database.db',sqlite3.OPEN_READWRITE, (err) => {
   if (err) {
     console.error('Failed to connect to database:', err.message);
   } else {
@@ -10,9 +8,7 @@ const db = new Database('./database.db', (err) => {
   }
 });
 
-// Table creation logic
 const createTables = () => {
-  // Categories table
   db.run(
     `CREATE TABLE IF NOT EXISTS categories (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -21,7 +17,6 @@ const createTables = () => {
     );`
   );
 
-  // Rooms table
   db.run(
     `CREATE TABLE IF NOT EXISTS rooms (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -32,7 +27,6 @@ const createTables = () => {
     );`
   );
 
-  // Many-to-Many relationship table
   db.run(
     `CREATE TABLE IF NOT EXISTS category_room (
       category_id INTEGER,
@@ -43,7 +37,6 @@ const createTables = () => {
   );
 };
 
-// Initialize tables
 db.serialize(createTables);
 
 export default db;
