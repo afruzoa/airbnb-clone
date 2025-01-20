@@ -39,24 +39,29 @@ nextBtn.addEventListener("click", () => {
   });
 });
 
-iconSection.addEventListener("scroll", updateButtonVisibility);
+iconSection?.addEventListener("scroll", updateButtonVisibility);
 updateButtonVisibility();
-// fetch data
-        fetch('http://localhost:3000/api/categories')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                const itemsList = document.getElementById('categories-icon');
-                data.forEach((category: { name: string; icon_url: string; }) => {
-                    const listItem = document.createElement('li');
-                    listItem.innerHTML = `<div class="icon-item">
+
+// fetch category data
+fetch("http://localhost:3000/api/categories")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log({ data });
+    const itemsList = document.getElementById("icon-section") as HTMLElement;
+    itemsList.innerHTML = "";
+    data.forEach(
+      (category: { id: number | string; name: string; iconUrl: string }) => {
+        const listItem = document.createElement("div");
+
+        listItem.innerHTML = `<div class="icon-item">
               <img
                 class="icon"
-                src="${category.icon_url}"
+                src="${category.iconUrl}"
                 alt="${category.name}"
                 width="24"
                 height="24"
@@ -64,12 +69,61 @@ updateButtonVisibility();
               <span class="icon-text">${category.name}</span>
             </div>
                     `;
-                    itemsList?.appendChild(listItem);
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
+        console.log({ listItem });
+        listItem.addEventListener("click", async () => {
+          await getCategoryRooms(category.id);
+        });
+        itemsList?.appendChild(listItem);
+      }
+    );
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
+// fetch room data
+const getCategoryRooms = async (id: string | number) => {
+  fetch(`http://localhost:3000/api/rooms/${id}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log({ data });
+      const roomsList = document.getElementById("main-pic") as HTMLElement;
+      roomsList.innerHTML = "";
+      data.forEach(
+        (room: {
+          name: string;
+          location: string;
+          pricePerNight: number;
+          images: string;
+        }) => {
+          const listRoom = document.createElement("div");
+          listRoom.innerHTML = ` <div class="pic-one pics">
+              <a href=""
+                ><img src=${JSON.parse(room.images)[0]} alt="${room.name}" />
+                <div class="text">
+                  <h5>${room.name}</h5>
+                  <p>${room.location}</p>
+                  <span>${room.pricePerNight}</span>
+                </div>
+              </a>
+                <button class="share-btn">
+                <img src="./images/share.svg" alt="Share" />
+              </button>
+            </div>`;
+          console.log({ listRoom });
+          roomsList?.appendChild(listRoom);
+        }
+      );
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+
 // who-menu
 const guests = document.querySelector(".guests-search") as HTMLElement;
 const guestMenu = document.querySelector(".who-menu") as HTMLElement;

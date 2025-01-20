@@ -1,22 +1,27 @@
-import sqlite3 from 'sqlite3';
+import sqlite3 from "sqlite3";
+const { Database } = sqlite3;
 
-const db = new Database('./database.db',sqlite3.OPEN_READWRITE, (err) => {
+// Create or connect to the database
+const db = new Database("./database.db", (err) => {
   if (err) {
-    console.error('Failed to connect to database:', err.message);
+    console.error("Failed to connect to database:", err.message);
   } else {
-    console.log('Connected to the SQLite database.');
+    console.log("Connected to the SQLite database.");
   }
 });
 
+// Table creation logic
 const createTables = () => {
+  // Categories table
   db.run(
     `CREATE TABLE IF NOT EXISTS categories (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL UNIQUE,
-      icon_url TEXT NOT NULL
+      iconUrl TEXT NOT NULL
     );`
   );
 
+  // Rooms table
   db.run(
     `CREATE TABLE IF NOT EXISTS rooms (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,6 +32,7 @@ const createTables = () => {
     );`
   );
 
+  // Many-to-Many relationship table
   db.run(
     `CREATE TABLE IF NOT EXISTS category_room (
       category_id INTEGER,
@@ -37,6 +43,7 @@ const createTables = () => {
   );
 };
 
+// Initialize tables
 db.serialize(createTables);
 
 export default db;
